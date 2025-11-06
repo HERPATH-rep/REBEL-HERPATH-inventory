@@ -1,21 +1,143 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
   <meta charset="utf-8">
-  <title>HERPATH 在庫一覧｜爬虫類、両生類、タランチュラ</title>
-  <meta name="description" content="REBELとHERPATHの在庫一覧。本文に種名・学名、下にGoogleスプレッドシートを埋め込み。常に最新の在庫を表示。">
+  <title>HERPATH 在庫一覧｜爬虫類（種名リスト）＆タランチュラ（販売対応）</title>
+  <meta name="description" content="REBEL／HERPATHの在庫一覧。本文に和名・学名（種名リスト）を掲載し、下にスプレッドシートを埋め込み。爬虫類は通販不可のため種として認識、タランチュラは商品としても認識。">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://fujiherpath.github.io/REBEL-HERPATH-inventory/">
+
+  <style>
+    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,"Noto Sans JP",sans-serif;line-height:1.7;margin:28px}
+    h1{margin:0 0 6px}
+    h2{margin:28px 0 10px}
+    h3{margin:16px 0 6px}
+    ul{padding-left:20px}
+    li{margin:3px 0}
+    .muted{opacity:.85}
+    .frame{border:1px solid #ddd}
+    .note{background:#fff8e1;border:1px solid #f0e0a0;padding:10px;border-radius:6px}
+  </style>
+
+  <!-- JSON-LD: 爬虫類・その他=Taxon の一覧（学名=name、和名=alternateName） -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "HERPATH 在庫（爬虫類ほか｜種名リスト）",
+    "itemListElement": [
+      { "@type": "Taxon", "name": "Pituophis catenifer affinis", "alternateName": "ソノラゴファースネーク" },
+      { "@type": "Taxon", "name": "Dendrelaphis pictus", "alternateName": "サザナミセタカヘビ" },
+      { "@type": "Taxon", "name": "Cerberus rynchops", "alternateName": "ヒロクチミズヘビ" },
+      { "@type": "Taxon", "name": "Lycodon subcinctus", "alternateName": "ヤスジククリィヘビ" },
+      { "@type": "Taxon", "name": "Lycodon ruhstrati", "alternateName": "アカマダラ" },
+      { "@type": "Taxon", "name": "Ptyas korros", "alternateName": "アカマタ" },
+      { "@type": "Taxon", "name": "Elaphe climacophora", "alternateName": "アオダイショウ（パターンレス）" },
+      { "@type": "Taxon", "name": "Thamnophis marcianus", "alternateName": "チェッカーガータースネーク（アルビノ）" },
+      { "@type": "Taxon", "name": "Thamnophis atratus hydrophilus", "alternateName": "オレゴンレッドスポットガータースネーク" },
+      { "@type": "Taxon", "name": "Cylindrophis ruffus", "alternateName": "アカオパイプヘビ" },
+      { "@type": "Taxon", "name": "Morelia tracyae", "alternateName": "ハルマヘラパイソン" },
+      { "@type": "Taxon", "name": "Morelia viridis", "alternateName": "グリーンパイソン（アルー）" },
+      { "@type": "Taxon", "name": "Sanzinia madagascariensis", "alternateName": "パルソンボア（ホワイトフェイズ）" },
+      { "@type": "Taxon", "name": "Eublepharis macularius", "alternateName": "レオパ（各モルフ）" },
+      { "@type": "Taxon", "name": "Uroplatus sikorae", "alternateName": "ヤマビタイヘラオヤモリ" },
+      { "@type": "Taxon", "name": "Timon lepidus", "alternateName": "ホウセキカナヘビ（完尾）" },
+      { "@type": "Taxon", "name": "Gerrhosaurus major", "alternateName": "オニプレートトカゲ" },
+      { "@type": "Taxon", "name": "Pelusios adansonii", "alternateName": "アダンソンハコヨコクビガメ" },
+      { "@type": "Taxon", "name": "Hoplobatrachus occipitalis", "alternateName": "アフリカトラフガエル" },
+      { "@type": "Taxon", "name": "Chersonesometrus tristis", "alternateName": "マイソールフォレストスコーピオン" },
+      { "@type": "Taxon", "name": "Scolopendra sp.", "alternateName": "ガラパゴスジャイアントセンチピード" }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: タランチュラ=Product の一覧（価格は任意・省略可） -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "HERPATH 在庫（タランチュラ｜販売可）",
+    "itemListElement": [
+      { "@type": "Product", "name": "コスタリカンレッドヘアー", "brand": "HERPATH",
+        "additionalProperty": [{"@type":"PropertyValue","name":"ScientificName","value":"Aphonopelma crinirufum"}],
+        "offers": { "@type": "Offer", "priceCurrency": "JPY", "availability": "http://schema.org/InStock" } },
+      { "@type": "Product", "name": "ゲレロブルーフィーマー", "brand": "HERPATH",
+        "additionalProperty": [{"@type":"PropertyValue","name":"ScientificName","value":"Bonnetina papalutlensis"}],
+        "offers": { "@type": "Offer", "priceCurrency": "JPY", "availability": "http://schema.org/InStock" } },
+      { "@type": "Product", "name": "アラジン", "brand": "HERPATH",
+        "additionalProperty": [{"@type":"PropertyValue","name":"ScientificName","value":"Chilobrachys sp. \"Aladdin\""}],
+        "offers": { "@type": "Offer", "priceCurrency": "JPY", "availability": "http://schema.org/InStock" } },
+      { "@type": "Product", "name": "タイゼブラレッグ", "brand": "HERPATH",
+        "additionalProperty": [{"@type":"PropertyValue","name":"ScientificName","value":"Cyriopagopus albostriatus"}],
+        "offers": { "@type": "Offer", "priceCurrency": "JPY", "availability": "http://schema.org/InStock" } },
+      { "@type": "Product", "name": "チャコジャイアントゴールデンニー", "brand": "HERPATH",
+        "additionalProperty": [{"@type":"PropertyValue","name":"ScientificName","value":"Grammostola pulchripes"}],
+        "offers": { "@type": "Offer", "priceCurrency": "JPY", "availability": "http://schema.org/InStock" } },
+      { "@type": "Product", "name": "パラワンブルー", "brand": "HERPATH",
+        "additionalProperty": [{"@type":"PropertyValue","name":"ScientificName","value":"Phlogiellus johnreylazoi"}],
+        "offers": { "@type": "Offer", "priceCurrency": "JPY", "availability": "http://schema.org/InStock" } }
+    ]
+  }
+  </script>
 </head>
+
 <body>
   <h1>HERPATH 在庫一覧</h1>
-  <p>M=オス　F=メス　BY=ベビー　Y＝ヤング　AD＝アダルト</p>
+  <p class="muted">M=オス／F=メス／BY=ベビー／Y=ヤング／AD=アダルト。検索で見つかるよう、下に和名＋学名のリストを本文として掲載しています。スプレッドシートは常に最新の在庫に連動します。</p>
 
+  <!-- 本文：検索ヒット用（和名＋学名のみ・カテゴリ別） -->
+  <h2>爬虫類（通販不可）｜種名リスト</h2>
+
+  <h3>ナミヘビ</h3>
+  <ul>
+    <li>ソノラゴファースネーク <i>(Pituophis catenifer affinis)</i></li>
+    <li>サザナミセタカヘビ <i>(Dendrelaphis pictus)</i></li>
+    <li>ヒロクチミズヘビ <i>(Cerberus rynchops)</i></li>
+    <li>ヤスジククリィヘビ <i>(Lycodon subcinctus)</i></li>
+    <li>アカマダラ <i>(Lycodon ruhstrati)</i></li>
+    <li>アカマタ <i>(Ptyas korros)</i></li>
+    <li>アオダイショウ（パターンレス） <i>(Elaphe climacophora)</i></li>
+    <li>チェッカーガータースネーク（アルビノ） <i>(Thamnophis marcianus)</i></li>
+    <li>オレゴンレッドスポットガータースネーク <i>(Thamnophis atratus hydrophilus)</i></li>
+    <li>アカオパイプヘビ <i>(Cylindrophis ruffus)</i></li>
+  </ul>
+
+  <h3>ボア・パイソン／ヤモリ・トカゲ・水亀・カエル</h3>
+  <ul>
+    <li>ハルマヘラパイソン <i>(Morelia tracyae)</i></li>
+    <li>グリーンパイソン（アルー） <i>(Morelia viridis)</i></li>
+    <li>パルソンボア（ホワイトフェイズ） <i>(Sanzinia madagascariensis)</i></li>
+    <li>レオパ（各モルフ） <i>(Eublepharis macularius)</i></li>
+    <li>ヤマビタイヘラオヤモリ <i>(Uroplatus sikorae)</i></li>
+    <li>ホウセキカナヘビ（完尾） <i>(Timon lepidus)</i></li>
+    <li>オニプレートトカゲ <i>(Gerrhosaurus major)</i></li>
+    <li>アダンソンハコヨコクビガメ <i>(Pelusios adansonii)</i></li>
+    <li>アフリカトラフガエル <i>(Hoplobatrachus occipitalis)</i></li>
+  </ul>
+
+  <h2>タランチュラ（通販対応）｜在庫リスト</h2>
+  <ul>
+    <li>コスタリカンレッドヘアー <i>(Aphonopelma crinirufum)</i></li>
+    <li>ゲレロブルーフィーマー <i>(Bonnetina papalutlensis)</i></li>
+    <li>アラジン <i>(Chilobrachys sp. "Aladdin")</i></li>
+    <li>タイゼブラレッグ <i>(Cyriopagopus albostriatus)</i></li>
+    <li>チャコジャイアントゴールデンニー <i>(Grammostola pulchripes)</i></li>
+    <li>パラワンブルー <i>(Phlogiellus johnreylazoi)</i></li>
+  </ul>
+
+  <h2>奇蟲（参考掲載）</h2>
+  <ul>
+    <li>マイソールフォレストスコーピオン <i>(Chersonesometrus tristis)</i></li>
+    <li>ガラパゴスジャイアントセンチピード <i>(Scolopendra sp.)</i></li>
+  </ul>
+
+  <!-- スプレッドシート埋め込み（pubhtml） -->
+  <h2>在庫スプレッドシート（常に最新）</h2>
+  <div class="note">下の表は Googleスプレッドシートの「ウェブ公開（pubhtml）」を埋め込んでいます。スプレッドシートを更新すると自動反映されます。</div>
   <iframe
+    class="frame"
     src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQlDYo_I0dAqiT7pO_9RkcXJ8Y4Yewd1yFwu8djX9ekBAYURBa5twfJLN_wsbX491vuNfcMd6Sgx9pM/pubhtml?widget=true&amp;headers=false"
-    width="100%"
-    height="900"
-    style="border:1px solid #ccc;"
-    loading="lazy">
-  </iframe>
+    width="100%" height="900" loading="lazy"></iframe>
 </body>
 </html>
