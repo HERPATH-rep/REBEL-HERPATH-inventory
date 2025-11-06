@@ -5,17 +5,55 @@
   <title>HERPATH 在庫一覧｜爬虫類、両生類、タランチュラ</title>
   <meta name="description" content="REBELとHERPATHの在庫一覧。本文に種名・学名、下にGoogleスプレッドシートを埋め込み。常に最新の在庫を表示。">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://herpath-rep.github.io/REBEL-HERPATH-inventory/">
+  <!-- Search Console を使う場合は下の行を発行タグに置き換え -->
+  <!-- <meta name="google-site-verification" content="XXXX"> -->
+
+  <style>
+    html, body { height:100%; margin:0; }
+    iframe { width:100%; height:100%; border:0; display:block; }
+  </style>
+
+  <!-- 組織情報（HERPATH & REBEL） -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "HERPATH",
+        "url": "https://herpath-rep.github.io/REBEL-HERPATH-inventory/",
+        "description": "爬虫類・両生類・奇蟲の在庫と過去販売記録。"
+      },
+      {
+        "@type": "Organization",
+        "name": "REBEL",
+        "url": "https://herpath-rep.github.io/REBEL-HERPATH-inventory/",
+        "description": "変態蛇・奇蟲・水亀を中心とした爬虫類ショップ。"
+      }
+    ]
+  }
+  </script>
+
+  <!-- 種リスト（Taxon） -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "HERPATH & REBEL 在庫（爬虫類・両生類・奇蟲：種名リスト）",
+    "itemListElement": [
+      { "@type": "Taxon", "name": "Pituophis catenifer affinis", "alternateName": "ソノラゴファースネーク" }
+    ]
+  }
+  </script>
 </head>
 <body>
-  <h1>HERPATH 在庫一覧</h1>
-  <p>M=オス　F=メス　BY=ベビー　Y＝ヤング　AD＝アダルト</p>
-
+  <h1>HERPATH　在庫一覧</h1>
+  <p>M=オス　F=メス　BY＝ベビー　Y＝ヤング　AD＝アダルト</p>
   <iframe
     src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQlDYo_I0dAqiT7pO_9RkcXJ8Y4Yewd1yFwu8djX9ekBAYURBa5twfJLN_wsbX491vuNfcMd6Sgx9pM/pubhtml?widget=true&amp;headers=false"
-    width="100%"
-    height="900"
-    style="border:1px solid #ccc;"
-    loading="lazy">
+    loading="lazy" allowfullscreen>
   </iframe>
 </body>
 </html>
