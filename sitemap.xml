@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- メインページ -->
+  <url>
+    <loc>https://herpath-rep.github.io/REBEL-HERPATH-inventory/</loc>
+    <lastmod>2025-11-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- 今後追加予定の個別種ページ例（作成後にURLを追加していく） -->
+  <url>
+    <loc>https://herpath-rep.github.io/REBEL-HERPATH-inventory/species/Hypsiscopus-plumbea.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://herpath-rep.github.io/REBEL-HERPATH-inventory/species/Scolecophis-atrocinctus.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 今後予定されている飼育記事・ブログページなど -->
+  <url>
+    <loc>https://herpath-rep.github.io/REBEL-HERPATH-inventory/blog/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+</urlset>
