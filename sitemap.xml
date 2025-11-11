@@ -8,7 +8,8 @@
     <priority>1.0</priority>
   </url>
 
-  <!-- 今後このページを作成予定
+  <!-- 今後このページを作成予定 -->
+  <!--
   <url>
     <loc>https://herpath-rep.github.io/REBEL-HERPATH-inventory/species/Hypsiscopus-plumbea.html</loc>
     <changefreq>monthly</changefreq>
@@ -21,7 +22,8 @@
   </url>
   -->
   
-  <!-- ブログ/お知らせ等（今後作成予定）
+  <!-- ブログ/お知らせ等（今後作成予定）-->
+  <!--
   <url>
     <loc>https://herpath-rep.github.io/REBEL-HERPATH-inventory/blog/</loc>
     <changefreq>weekly</changefreq>
